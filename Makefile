@@ -11,14 +11,14 @@ help: ## Show this help
 	    	make up"
 
 #Инициализация
-init: init-folders git-clone init-services
+init: init-folders init-services
 
 init-folders: ## Создание папок для сервисов, выдача прав на изменение
 	mkdir -p services \
 	&& sudo chown -R $(USER):$(USER) services/ \
 
-git-clone: ## Клонирование всех зависимых репозиториев и доступы
-	-sh ./scripts/git-clone-services.sh
+#git-clone: ## Клонирование всех зависимых репозиториев и доступы
+#	-sh ./scripts/git-clone-services.sh
 
 init-services: ## Установка зависимостей для nest серверов
 	cd services/backend/ && npm install
