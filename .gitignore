@@ -11,6 +11,6 @@ node_modules/
 
 # Database data and services
 postgres/
-services/
 
 *.env
+/services/
