@@ -21,7 +21,7 @@ init-folders: ## Создание папок для сервисов, выдач
 #	-sh ./scripts/git-clone-services.sh
 
 init-services: ## Установка зависимостей для nest серверов
-	cd services/backend/ && npm install
+	cd services/backend/app && npm install
 	cd services/frontend/client && npm install
 
 #Запуск
@@ -30,7 +30,7 @@ front:  ## Запуск фронта в режиме development
 
 
 back:  ## Запуск бека
-	cd ./services/backend/ && npm run start:dev
+	cd ./services/backend/app && npm run start:dev
 
 #Сборка
 build: ## Сборка docker контейнеров приложения

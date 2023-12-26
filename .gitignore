@@ -1,0 +1,16 @@
+# IDEs and editors
+node_modules/
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+
+# Database data and services
+postgres/
+services/
+
+*.env
