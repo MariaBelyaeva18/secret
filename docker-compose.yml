@@ -1,0 +1,31 @@
+x-base:
+  &base
+  networks:
+    - docker_net
+  restart: always
+
+services:
+  backend:
+    <<: *base
+    build: ./containers/backend
+    ports:
+      - "127.0.0.1:8080:8080"
+    env_file:
+      - .env
+    volumes:
+      - ./services/backend:/app
+      - ./services/backend/node_modules:/node_modules
+
+  postgres:
+    <<: *base
+    build: ./containers/postgres
+    ports:
+      - "127.0.0.1:5432:5432"
+    env_file:
+      - .env
+    volumes:
+      - ./postgres/db_backups:/backups
+      - ./postgres/pg:/var/lib/postgresql/data
+
+networks:
+  docker_net:
