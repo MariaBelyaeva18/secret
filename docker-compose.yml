@@ -13,7 +13,7 @@ services:
     env_file:
       - .env
     volumes:
-      - ./services/backend/app:/app
+      - ./services/backend:/app
       - ./services/backend/node_modules:/node_modules
 
   postgres:
